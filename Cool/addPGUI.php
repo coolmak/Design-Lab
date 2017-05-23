@@ -1,10 +1,11 @@
 <?php  
     include_once('UpdatePGMgr.php');  
-       
+      session_start(); 
     $funObj = new UpdatePGMgr();  
 	
 	if(isset($_POST['submit'])) { 
 		
+		$email=$_SESSION['email'];
         $pgname = $_POST['pgname']; 
 		$pghouseno= $_POST['pghouseno'];
         $street = $_POST['street']; 
@@ -18,7 +19,7 @@
 		$air = $_POST['air']; 
 		$description= $_POST['description'];
 		
-            $user = $funObj->addPgInfo($pgname , $pghouseno, $street, $landmark, $city, $pincode,$address, $contact, $rent, $gender, $air, $description);  
+            $user = $funObj->addPgInfo($email,$pgname , $pghouseno, $street, $landmark, $city, $pincode,$address, $contact, $rent, $gender, $air, $description);  
             if($user){  
                     echo "<script>alert('Details Updated')</script>";  
         } else {  
@@ -76,7 +77,7 @@
 				background-color:#FFFFE0;
 				margin:0 auto;
 				width:600px;
-				height:625px;
+				height:675px;
 				border-color:white;
 				border-style:solid;
 			}
@@ -96,7 +97,7 @@
 		<li ]><a href="addPGUI.php">Add PG</a></li></div>
 		<div style="position:absolute;top:140px;left:674px;width:250px;">
 		<li><a href="updatePGUI.php">Update PG</a></li></div>
-		<div style="position:absolute;top:121px;left:1258px;width:100px;">
+		<div style="position:absolute;top:121px;left:1240px;width:100px;">
 		<li><a href="loginUI.php">Logout</a></li></div>
 
 
@@ -108,36 +109,40 @@
 				<table cellpadding="12" class="tab1">
 					
 					<tr>
+						<td><b>Email</b></td>
+						<td><?=$_SESSION['email'] ?></td>
+					</tr>
+					<tr>
 						<td><b>PG Name</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="pgname" placeholder="enter pg name"/></td>
+						<td><input type="text" style="height:23px; width:400px;" name="pgname" placeholder="enter pg name"  required/></td>
 					</tr>
 					<tr>
 						<td><b>House No./Building</b></td>
-						<td><input type="text" style="height:23px; width:400px;"name="pghouseno" placeholder="enter House No./Building "></input></td>
+						<td><input type="text" style="height:23px; width:400px;"name="pghouseno" placeholder="enter House No./Building "  required></input></td>
 					</tr>
 					<tr>
 						<td><b>Street</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="street" placeholder="enter street name"></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="street" placeholder="enter street name"  required></input></td>
 					</tr>
 					<tr>
 						<td><b>Landmark</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="landmark" placeholder="enter landmark"></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="landmark" placeholder="enter landmark"  required></input></td>
 					</tr>
 					<tr>
 						<td><b>City</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="city" placeholder="enter city"></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="city" placeholder="enter city"  required></input></td>
 					</tr>
 					<tr>
 						<td><b>PinCode</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="pincode" placeholder="enter pincode"></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="pincode" placeholder="enter pincode"  required></input></td>
 					</tr>
 					<tr>
 						<td><b>Contact No.</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="contact" placeholder="enter contact no."></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="contact" placeholder="enter contact no."  required></input></td>
 					</tr>
 					<tr>
 						<td><b>Rent</b></td>
-						<td><input type="text" style="height:23px; width:400px;" name="rent" placeholder="enter rent"></input></td>
+						<td><input type="text" style="height:23px; width:400px;" name="rent" placeholder="enter rent"  required></input></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -155,7 +160,7 @@
 					</tr>
 					<tr>
 						<td><b>Description</b></td>
-						<td><textarea type="text" style="height:80px; width:400px;" name="description" placeholder="enter pg description"></textarea></td>
+						<td><textarea type="text" style="height:80px; width:400px;" name="description" placeholder="enter pg description"  required></textarea></td>
 					</tr>
 					<tr>
 						<td></td>

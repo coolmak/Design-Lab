@@ -53,7 +53,7 @@
 	<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 	<div id="navcontainer">
 		<ul >
-					<div style="position:absolute;top:140px;left:422px;width:250px;">
+		<div style="position:absolute;top:140px;left:422px;width:250px;">
 		<li ]><a href="addPGUI.php">Add PG</a></li></div>
 		<div style="position:absolute;top:140px;left:674px;width:250px;">
 		<li><a href="updatePGUI.php">Update PG</a></li></div>

@@ -121,11 +121,11 @@
 					</tr>
 					<tr>
 						<td><b>Address</b></td>
-						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address" placeholder="enter college address "></textarea></td>
+						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address" placeholder="enter college address " required></textarea></td>
 					</tr>
 					<tr>
 						<td><b>Description</b></td>
-						<td><textarea type="text" style="height:120px; width:400px;" name="description" placeholder="enter college description"></textarea></td>
+						<td><textarea type="text" style="height:120px; width:400px;" name="description" placeholder="enter college description" required></textarea></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>

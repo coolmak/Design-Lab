@@ -56,11 +56,11 @@
 				<td>
 				Stream:        <select name="stream" id="reg1" style="width:400px">
 				<option value="Computer Science And Engineering/Computer Science And Technology">Computer Science And Engineering/Computer Science And Technology</option> 
-				<option value="ECE">ECE</option> 
-				<option value="EE">EE</option> 
-				<option value="ME">ME</option> 
-				<option value="CIVIL">Civil</option> 
-				<option value="FOOD">FOOD ENGINEERING</option> 
+				<option value="Electronics And Communication Engineering/Electronics And Telecommunication Engineering
+				">Electronics And Communication Engineering/Electronics And Telecommunication Engineering</option> 
+				<option value="Electrical Engineering">Electrical Engineering</option> 
+				<option value="Mechanical Engineering">Mechanical Engineering</option> 
+				<option value="Civil Engineering">Civil Engineering</option> 
 				</select>
 				</td>
 			</tr>

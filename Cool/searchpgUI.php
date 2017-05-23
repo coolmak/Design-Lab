@@ -23,7 +23,7 @@
 				 padding:5px 10px 5px 10px;
 				 border-top-width:4px;
 				 }
-			label{
+			label{	
 				color:white;
 			}
 			 p.sea{
@@ -45,11 +45,17 @@
 			<tr>
 			&nbsp;&nbsp;
 				<td>
-					Nearby College:  <select name="college" id="coll" style="width:400px">
-						<option value="Institute of Engineering & Management, Kolkata">Institute of Engineering & Management, Kolkata</option> 
-						<option value="coll2">Techno India SaltLake, Kolkata</option> 
-						<option value="coll3">Techno India University SaltLake, Kolkata</option>
-					</select>
+					Nearby College:  	<select name="college" style="width:400px"> 
+									    
+											<?php
+												require_once 'dbConnect.php'; 
+												$db = new dbConnect();
+												$dd_res=mysql_query("Select collegename from collegeinfo");
+												while($r=mysql_fetch_row($dd_res)){ 
+													   echo "<option value='$r[0]'> $r[0] </option>";
+												 }
+											?>
+									</select>
 				</td>
 			</tr><tr></tr><tr></tr><tr></tr>
 			<tr>

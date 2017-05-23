@@ -94,6 +94,8 @@
 	</div>
 	
 		<form name="addcollege" method="post" action="" >
+
+
 		
 			<p class="none" style="position: absolute;top:250px; left:374px; ">
 			
@@ -101,15 +103,15 @@
 					
 					<tr>
 						<td><b>College Name</b></td>
-						<td><input type="text" style="height:23px; width:350px;" name="collegename" placeholder="enter college name"/></td>
+						<td><input type="text" style="height:23px; width:350px;" name="collegename" placeholder="enter college name"  required/></td>
 					</tr>
 					<tr>
 						<td><b>Address</b></td>
-						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address" placeholder="enter college address "></textarea></td>
+						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address" placeholder="enter college address "  required></textarea></td>
 					</tr>
 					<tr>
 						<td><b>Description</b></td>
-						<td><textarea type="text" style="height:120px; width:400px;" name="description" placeholder="enter college description"></textarea></td>
+						<td><textarea type="text" style="height:120px; width:400px;" name="description" placeholder="enter college description" required></textarea></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>

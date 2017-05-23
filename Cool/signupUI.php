@@ -13,7 +13,7 @@
             if(!$user){  
                 $register = $funObj->signup($name,$contact_no, $email, $password);  
                 if($register){    
-					 header("location:PgInfo.php");
+					 header("location:PgOwnerUI.php");
                 }else{  
                     echo "<script>alert('Registration Not Successful')</script>";  
                 }  
@@ -75,23 +75,23 @@
 					
 					<tr>
 						<td><b>Name</b></td>
-						<td><input type="name" name="name" placeholder="enter your name"/></td>
+						<td><input type="name" name="name" placeholder="enter your name"  required/></td>
 					</tr>
 					<tr>
 						<td><b>Contact No</b></td>
-						<td><input type="tel" name="pgcontact" placeholder="enter your contact no."/></td>
+						<td><input type="tel" name="pgcontact" placeholder="enter your contact no."  required/></td>
 					</tr>
 					<tr>
 						<td><b>Email</b></td>
-						<td><input type="email"  name="email" placeholder="enter the email-id"/></td>
+						<td><input type="email"  name="email" placeholder="enter the email-id"  required/></td>
 					</tr>
 					<tr>
 						<td><b>Password</b></td>
-						<td><input type="password" name="password" placeholder="enter the password"/></td>
+						<td><input type="password" name="password" placeholder="enter the password"  required/></td>
 					</tr>
 					<tr>
 						<td><b> Confirm Password</b></td>
-						<td><input type="password" name="confirm_password" placeholder="re-enter the password"/></td>
+						<td><input type="password" name="confirm_password" placeholder="re-enter the password"  required/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>

@@ -54,7 +54,7 @@
 	<div id="navcontainer">
 		<ul >
 					<div style="position:absolute;top:140px;left:422px;width:250px;">
-		<li ]><a href="addcollegeUI.php">Add College</a></li></div>
+		<li><a href="addcollegeUI.php">Add College</a></li></div>
 		<div style="position:absolute;top:140px;left:674px;width:250px;">
 		<li><a href="updatecollegeUI.php">Update College</a></li></div>
 		<div style="position:absolute;top:121px;left:1258px;width:100px;">

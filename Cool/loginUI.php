@@ -1,8 +1,9 @@
+
 <?php
 include_once('LoginMgr.php');
 	 
 	$funObj = new LoginMgr();
-if(isset($_POST['submit'])) {
+	if(isset($_POST['submit'])) {
 			if(isset($_POST['radio'])){
 				if($_POST['radio']==="Pgowner"){
 					$status=$_POST['radio'];
@@ -86,8 +87,8 @@ if(isset($_POST['submit'])) {
 			x.style.display = 'block';
 		}
 		function signup(){
+			window.open("signupUI.php","_self")
 			
-			open("signupUI.php");
 		}
 	</script>
 
@@ -105,11 +106,11 @@ if(isset($_POST['submit'])) {
 					</tr>
 					<tr>
 						<td><b>Email</b></td>
-						<td><input type="email" name="email"  placeholder="enter the email-id"/></td>
+						<td><input type="email" name="email"  placeholder="enter the email-id" required/></td>
 					</tr>
 					<tr>
 						<td><b>Password</b></td>
-						<td><input type="password" name="password"  placeholder="enter the password"/></td>
+						<td><input type="password" name="password"  placeholder="enter the password"  required/></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>

@@ -26,41 +26,53 @@
 			label{
 				color:white;
 			}
-			table, th, td {
+			table, td, th {
 				border: 1px solid black;
 			}
+
+			table {
+				border-collapse: collapse;
+				width: 50%;
+			}
+
+			th {
+				height: 50px;
+			}
+			
+			tr{
+				height: 30px;
+			}
+			 td 
+{
+    text-align:center; 
+    vertical-align:middle;
+}
 			p.none{
 				margin:0 auto;
-				width:1366px;
+				width:600px;
+				height:400px;
 				border-style:solid;
-				overflow:scroll;
+				
 			}
-			div.tbody{
-				width:100%;
-				overflow:scroll;
-			}
-			.table-tr :hover {
-    background-color: white;
-	td a { 
-   display: block; 
-   border: 1px solid black;
-   padding: 16px; 
-}
-}
-	
+			
+
+		
+		
+		
 		</style>
+		
 	</head>
 	<body bgcolor="#F7F9F9">
 		<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 		<h2><center><label>List of Available Paying Guest</label></center></h2>
-		<table>
-		<thead>
+		<table bgcolor="#FFFFE0"  align="center">
+		
 		<tr>
-					<th>PG Name</th> <th>Address</th> <th>Contact No.</th>
-					<th>Rent</th> <th>AC/Non-AC</th> <th>Description</th>
+					<th>PG Name</th> 
+					<th>Rent</th> 
 					<th>Distance</th>
-		</tr></thead>
-		<tbody>
+		</tr>
+		
 		<?php  
 			include_once('SearchMgr.php');  
 			   
@@ -69,26 +81,23 @@
 			if(isset($_POST['submit'])) { 
 				$collegename = $_POST['college']; 
 				$gender= $_POST['gender'];
-				
+				//echo $collegename;
 				$qr1= $funObj->getCollegeAddress($collegename);
 				$result=mysql_fetch_array($qr1, MYSQL_ASSOC);
 				$collegeaddress=$result["address"];
-				
+				$_SESSION['collegeaddress']=$result["address"];
+				//echo $collegeaddress;
 				$qr=$funObj->searchPgInfo($gender);
 				If (mysql_num_rows($qr) > 0) {
 					
 					while($row = mysql_fetch_array($qr, MYSQL_ASSOC)) {
 						$distance= $funObj->getDistance($collegeaddress,$row["address"]);
 						?>
-						<tr class="table-tr"> 
+						<tr > 
 
-							<td><a href="https://www.google.com"><?php echo $row["pgname"];?></a> </td>				
-							<td><a href="https://www.google.com"><?php echo $row["address"];?></a> </td>
-							<td><a href="https://www.google.com"><?php echo $row["contactno"];?></a> </td>
-							<td><a href="https://www.google.com"><?php echo $row["rent"];?></a> </td>
-							<td><a href="https://www.google.com"><?php echo $row["air"];?></a> </td>
-							<td><a href="https://www.google.com"><?php echo $row["description"];?></a> </td>
-							<td><a href="https://www.google.com"><?php echo $distance;?></a> </td>
+							<td><a href="pgdetail.php?pgname=<?php echo $row["pgname"];?>"><?php echo $row["pgname"];?> </a></td>				
+							<td><?php echo $row["rent"];?></td>
+							<td><?php echo $distance;?> </td>
 						</tr>
 					<?php
 					}
@@ -99,7 +108,8 @@
 				}		
 			}  		
 		?>
-		</tbody>
+		
 	</table>
+	
 	</body>
 </html>

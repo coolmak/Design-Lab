@@ -24,11 +24,9 @@ session_start();
             if ($no_rows == 1)   
             {  
 				
-                $_SESSION['login'] = true;  
-                $_SESSION['uid'] = $user_data['id'];  
-                $_SESSION['username'] = $user_data['username'];  
-                $_SESSION['email'] = $user_data['emailid'];  
-                return TRUE;  
+                $_SESSION['login'] = true;   
+                $_SESSION['email'] = $user_data['email'];  
+                return TRUE; 
             }  
             else  
             {  
@@ -45,9 +43,7 @@ session_start();
 					{  
 						
 						$_SESSION['login'] = true;  
-						$_SESSION['uid'] = $user_data['id'];  
-						$_SESSION['username'] = $user_data['username'];  
-						$_SESSION['email'] = $user_data['emailid'];  
+						$_SESSION['email'] = $user_data['email'] ;  
 						return TRUE;  
 					}  
 					else  

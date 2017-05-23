@@ -1,36 +1,15 @@
 <?php  
-require_once 'dbConnect.php';  
-session_start();  
-    class SearchMgr {  
-            
-        function __construct() {  
-              
-            // connecting to database  
-            $db = new dbConnect();  
-               
-        }  
-        // destructor  
-        function __destruct() {  
-              
-        }  
-        public function searchCollegeInfo($stream, $round){  
-				if($round==1)
-					$qr = mysql_query("select * from round1 where BranchName='".$stream."' ORDER by OPOpen asc") or die(mysql_error()); 
-				else if($round==2)
-					$qr = mysql_query("select * from round2 where BranchName='".$stream."' ORDER by OPOpen asc") or die(mysql_error()); 
-				else
-					$qr = mysql_query("select * from round3 where BranchName='".$stream."' ORDER by OPOpen asc") or die(mysql_error()); 
-				return $qr;
-		}
-        public function getCollegeAddress($collegename){
-			$qr1 = mysql_query("select address from collegeinfo where collegename='".$collegename."' ") or die(mysql_error()); 
-			return $qr1;
-		}
-        public function searchPgInfo($gender){
-			$qr2 = mysql_query("select * from pginfo where gender='".$gender."' ") or die(mysql_error()); 
-			return $qr2;
-		}
-		Public function getDistance($addressFrom, $addressTo){
+	session_start();
+	require_once 'dbConnect.php';  
+    
+	$db = new dbConnect();  
+        
+		$addressFrom=$_SESSION['collegeaddress'];
+		echo $addressFrom;
+		$addressTo=$_SESSION['pgaddress'];
+		//$qr=mysql_query("select address from pginfo where pgname='".$pgname."' ") or die(mysql_error());
+		//$addressTo=mysql_fetch_array($qr);
+		echo "<br>".$addressTo;
 			
 			//Change address format
 			$formattedAddrFrom = str_replace(' ','+',$addressFrom);
@@ -45,7 +24,7 @@ session_start();
 			//$geocodeTo = file_get_contents('https://maps.google.com/maps/api/geocode/json?address='.$formattedAddrTo.'&sensor=false&key=AIzaSyCKgyhJyqbD3yUSRq3UqLY6jGyRXccuC6g');
 			//$outputTo = json_decode($geocodeTo);
 			
-			$geocodeFrom ="https://maps.google.com/maps/api/geocode/json?address='.$formattedAddrFrom.'&sensor=false&region=India&key=AIzaSyCKgyhJyqbD3yUSRq3UqLY6jGyRXccuC6g";
+			/*$geocodeFrom ="https://maps.google.com/maps/api/geocode/json?address='.$formattedAddrFrom.'&sensor=false&region=India&key=AIzaSyCKgyhJyqbD3yUSRq3UqLY6jGyRXccuC6g";
 			$ch = curl_init($geocodeFrom);
 			curl_setopt($ch, CURLOPT_URL, $geocodeFrom);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -96,7 +75,72 @@ session_start();
 			
 			return ($miles * 1.609344);
 			
-		}
+		}*/
 
-    }  
-?>  
+     
+?>  <html>
+	<head>
+		<style type="text/css">
+			header, footer {
+				padding: 1ex;
+				color: white;
+				background-color: #7B241C  ;
+				clear: left;
+				text-align: center;
+			}
+			h1{
+				 background-color:blue;
+				 padding:5px 10px 5px 10px;
+				 border-top-color:green;
+				 border-top-style:solid;
+				 border-top-width:4px;
+				 border-bottom-color:green;
+				 border-bottom-style:solid;
+				 border-bottom-width:4px;
+			}
+			h2{
+				 color:white;
+				 background-color:#D3D3D3;
+				 paddin:20px;
+				 border-style:solid;
+			}
+			p.none{
+				background-color:#FFFFE0;
+				margin:0 auto;
+				width:500px;
+				border-color:white;
+				border-style:solid;
+			}
+	   
+		    b{
+		        color:blue;
+		    }
+			#map {
+				height: 450px;
+				width: 100%;
+		    }
+		</style>
+	</head>
+	
+	<body bgcolor="#F7F9F9">
+		<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
+		<center><h2>Map</h2></center>
+		<div id="map"></div>
+		<script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKgyhJyqbD3yUSRq3UqLY6jGyRXccuC6g&callback=initMap">
+    </script>
+	</body>
+</html>

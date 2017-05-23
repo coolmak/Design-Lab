@@ -55,11 +55,11 @@
 	<body bgcolor="#F7F9F9">
 		<script>
 			function callpg(){
-				open("searchpgUI.php");
+				window.open("searchpgUI.php","_self");
 			}
 			function callcollege()
 			{
-			open("searchcollegeUI.php");
+			window.open("searchcollegeUI.php","_self");
 			}
 		</script>
 
