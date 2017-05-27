@@ -1,16 +1,16 @@
 <html>
 	<head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -36,8 +36,18 @@
 		</style>
 	</head>
 <body bgcolor="#F7F9F9">
+<script>
+			function callhome(){
+				window.open("index.php","_self");
+			}
+			
+		</script>
+
 	<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 	<h2><center><label>Paying Guest</label></center></h2>
+	<div style="position:absolute;top:38px;left:50px;width:38px;height:38px">
+			<input type="image" src="home.png" alt="home" width="37" height="37" id ="home" onclick="callhome()" ></div>
+		
 	<center>
 	<form name="searchpgform" method="post" action="searchpgResult.php" >
 		<p class="sea">

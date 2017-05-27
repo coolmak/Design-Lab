@@ -1,16 +1,16 @@
 <html>
 	<head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -33,7 +33,7 @@
 				display: block;
 				color: white;
 				text-align: center;
-				padding: 16px;
+				padding: 8px;
 				text-decoration: none;
 			}
 
@@ -54,6 +54,7 @@
 	
 	<body bgcolor="#F7F9F9">
 		<script>
+			
 			function callpg(){
 				window.open("searchpgUI.php","_self");
 			}
@@ -66,9 +67,8 @@
 		<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 		<ul>
 		  <li><a href="index.php">Home</a></li>
-		  
 		  <!--<li><a href="about.php">About us</a></li>--> 
-		  <div style="position:absolute;top:121px;left:1225px">
+		  <div style="position:absolute;top:108px;left:1238px">
 		  <li><a href="loginUI.php">Log In/Sign Up</a></li></div>
 		</ul>
 		
@@ -77,7 +77,7 @@
 			<input type="image" src="college picture.jpg" alt="College" width="250" height="250" id ="clg" onclick="callcollege()" ></div>
 			<div style="position:absolute;top:0px;left:684px;width:250px;height:250px">
 			<input type="image" src="PG picture.jpg" alt="Paying Guest" width="250" height="250" id ="pg" onclick="callpg()" ></div>
-			</div>
+		</div>
 		
 	</body>
 </html>

@@ -18,16 +18,16 @@
 <html>
 	<head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -85,14 +85,24 @@
 	</head>
 	
 <body bgcolor="#F7F9F9">
+<script>
+    window.test = function(e){
+			//document.write(e.value);
+				//document.getElementById("selectedcollegename").value = e.value;
+				//window.location.href = "updatecollegeUI.php?selectedcollegename=" + e.value;
+				var collegename=e.value;
+				
+				}
+				document.cookie="selectedcollegename ="	+collegename;
+</script>
 	<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 	<div id="navcontainer">
 		<ul >
-					<div style="position:absolute;top:140px;left:422px;width:250px;">
+					<div style="position:absolute;top:130px;left:422px;width:250px;">
 		<li ]><a href="addcollegeUI.php">Add College</a></li></div>
-		<div style="position:absolute;top:140px;left:674px;width:250px;">
+		<div style="position:absolute;top:130px;left:674px;width:250px;">
 		<li><a href="updatecollegeUI.php">Update College</a></li></div>
-		<div style="position:absolute;top:121px;left:1258px;width:100px;">
+		<div style="position:absolute;top:107px;left:1258px;width:100px;">
 		<li><a href="loginUI.php">Logout</a></li></div>
 
 </ul></div>
@@ -106,8 +116,8 @@
 					<tr>
 						<td><b>College Name</b></td>
 						<td>
-							<select name="collegename"> 
-							   <option value=""> -----------ALL----------- </option> 
+							<select name="collegename" id="dropdownid" onchange="test(this);"> 
+							   <option value="" > -----------ALL----------- </option> 
 								<?php
 								require_once 'dbConnect.php'; 
 								$db = new dbConnect();
@@ -119,13 +129,16 @@
 							</select>
 						</td>
 					</tr>
+			
+					
 					<tr>
 						<td><b>Address</b></td>
-						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address" placeholder="enter college address " required></textarea></td>
+						<td><textarea type="text" style="height:60px; width:300px;"name="coll_address"  required>
+						</textarea></td>
 					</tr>
 					<tr>
 						<td><b>Description</b></td>
-						<td><textarea type="text" style="height:120px; width:400px;" name="description" placeholder="enter college description" required></textarea></td>
+						<td><textarea type="text" style="height:120px; width:400px;" name="description" required></textarea></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>

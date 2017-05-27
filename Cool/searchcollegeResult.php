@@ -1,16 +1,21 @@
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -26,31 +31,39 @@
 			label{
 				color:white;
 			}
-			table{
-				width: 100%;
-			}
-			table, th, td {
+			
+			table, td, th {
 				border: 1px solid black;
-				
 			}
-			p.none{
-				margin:0 auto;
-				width:1366px;
-				border-style:solid;
-				overflow:scroll;
+
+			table {
+				border-collapse: collapse;
+				width: 98%;
 			}
-			div.tbody{
-				width:100%;
-				overflow:scroll;
+			th{
+				text-align:center; 
+				vertical-align:middle;
+			}
+			td {
+				text-align:center; 
+				vertical-align:middle;
 			}
 	
 		</style>
 	</head>
 	<body bgcolor="#F7F9F9">
+		<script>
+			function callhome(){
+				window.open("index.php","_self");
+			}
+		</script>
+
 		<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
+		<div style="position:absolute;top:30px;left:50px;width:38px;height:38px">
+		<input type="image" src="home.png" alt="home" width="43" height="43" id ="home" onclick="callhome()" ></div>
+	
 		<h2><center><label>Opening & Closing Rank</label></center></h2>
-		<div style overflow: auto;">
-		<table>
+		<table class="table table-hover">
 		<thead>
 		<!--<tr>
 					<th>InstituteName</th> <th>BranchName</th> <th>OPOpen</th>
@@ -126,6 +139,6 @@
 					<th>BBPHClose</th> <th>TFWOpen</th> <th>TFWClose</th>
 		</tr></tfoot>-->
 	</table>
-	</div>
+	
 	</body>
 </html>

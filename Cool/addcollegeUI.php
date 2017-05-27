@@ -20,16 +20,16 @@
 <html>
 	<head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -84,11 +84,11 @@
 	<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 	<div id="navcontainer">
 		<ul >
-			<div style="position:absolute;top:140px;left:422px;width:250px;">
+			<div style="position:absolute;top:130px;left:422px;width:250px;">
 				<li ]><a href="addcollegeUI.php">Add College</a></li></div>
-			<div style="position:absolute;top:140px;left:674px;width:250px;">
+			<div style="position:absolute;top:130px;left:674px;width:250px;">
 				<li><a href="updatecollegeUI.php">Update College</a></li></div>
-			<div style="position:absolute;top:121px;left:1258px;width:100px;">
+			<div style="position:absolute;top:107px;left:1258px;width:100px;">
 				<li><a href="loginUI.php">Logout</a></li></div>
 		</ul>
 	</div>

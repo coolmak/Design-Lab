@@ -37,16 +37,16 @@ include_once('LoginMgr.php');
 ?>
 <head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -90,9 +90,15 @@ include_once('LoginMgr.php');
 			window.open("signupUI.php","_self")
 			
 		}
+		function callhome(){
+				window.open("index.php","_self");
+			}
 	</script>
 
 	<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
+	<div style="position:absolute;top:38px;left:50px;width:38px;height:38px">
+			<input type="image" src="home.png" alt="home" width="37" height="37" id ="home" onclick="callhome()" ></div>
+		
 	<center><h2>Log In / Sign Up</h2></center>
 	
 	<form name="loginform" method="post" action="" >
@@ -113,7 +119,7 @@ include_once('LoginMgr.php');
 						<td><input type="password" name="password"  placeholder="enter the password"  required/></td>
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
+						<td></td>
 						<td><input type="submit" value="Login" name="submit"/></td>
 						<td><input type="button" value="Sign Up" name="button" id ="sign" onclick="signup()"/></td>
 					</tr>
