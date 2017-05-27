@@ -1,16 +1,16 @@
 <html>
 	<head>
 		<style type="text/css">
-			header, footer {
-				padding: 1ex;
+			header{
+				padding: 0.8ex;
 				color: white;
-				background-color: #7B241C  ;
+				background-color: #E74C3C  ;
 				clear: left;
 				text-align: center;
 			}
 			h1{
-				 background-color:blue;
-				 padding:5px 10px 5px 10px;
+				 background-color:#E74C3C;
+				 
 				 border-top-color:green;
 				 border-top-style:solid;
 				 border-top-width:4px;
@@ -26,6 +26,8 @@
 			label{
 				color:white;
 			}
+			
+			
 			table, td, th {
 				border: 1px solid black;
 			}
@@ -63,14 +65,25 @@
 		
 	</head>
 	<body bgcolor="#F7F9F9">
+	<script>
+			function callhome(){
+				window.open("index.php","_self");
+			}
+			
+		</script>
+
 		<header><h1><center><label>WBJEE Admission & Accommodation</label></center></h1></header>
 		<h2><center><label>List of Available Paying Guest</label></center></h2>
+		<div style="position:absolute;top:38px;left:50px;width:38px;height:38px">
+			<input type="image" src="home.png" alt="home" width="37" height="37" id ="home" onclick="callhome()" ></div>
+		
+		
 		<table bgcolor="#FFFFE0"  align="center">
 		
 		<tr>
 					<th>PG Name</th> 
 					<th>Rent</th> 
-					<th>Distance</th>
+					<th>Distance (km)</th>
 		</tr>
 		
 		<?php  
@@ -97,7 +110,7 @@
 
 							<td><a href="pgdetail.php?pgname=<?php echo $row["pgname"];?>"><?php echo $row["pgname"];?> </a></td>				
 							<td><?php echo $row["rent"];?></td>
-							<td><?php echo $distance;?> </td>
+							<td><?php echo number_format((float)$distance, 2, '.', '');?> </td>
 						</tr>
 					<?php
 					}
